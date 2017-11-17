@@ -3,7 +3,8 @@
 
   angular
     .module('common.patient')
-    .directive('patientHeader', patientHeader);
+    .directive('patientHeader', patientHeader)
+    .controller('PatientHeaderController', PatientHeaderController);
 
   /* @ngInject */
   function patientHeader() {
@@ -13,7 +14,8 @@
       controllerAs: 'vm',
       restrict: 'AE',
       scope: {
-        patient: '='
+        patient: '=',
+        displayActions: "="
       },
       templateUrl: '../common/patient/directives/patientHeader.html'
     };
